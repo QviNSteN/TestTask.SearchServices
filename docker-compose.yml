@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  test.provider.one:
+    image: ${DOCKER_REGISTRY-}testproviderone
+    build:
+      context: .
+      dockerfile: Test.Provider.One/Dockerfile
+
+  test.provider.two:
+    image: ${DOCKER_REGISTRY-}testprovidertwo
+    build:
+      context: .
+      dockerfile: Test.Provider.Two/Dockerfile
+
+
+  test.searchservice:
+    image: ${DOCKER_REGISTRY-}testsearchservice
+    build:
+      context: .
+      dockerfile: Test.SearchService/Dockerfile
+
